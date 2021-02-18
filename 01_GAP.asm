@@ -11,13 +11,22 @@ di overflow/underflow).
 Nonostante l'utilizzo di altri registri della CPU, il sottoprogramma restituisce 
 il controllo al programma chiamante senza che tali registri risultino alterati.
 
+************ ESEMPIO FUNZIONAMENTO SOTTOPROGRAMMA ************
+
+		INPUT 					OUTPUT
+R0 X3408 	x3408 	112 	R0 139=112-(-27) 	x3408 	112
+		x3409 	-27 				x3409 	-27
+		x340A 	-15 				x340A 	-15
+		x340B 	 45 				x340B 	 45
+		x340C 	 15 				x340C 	 15
+		x340D 	  0				x340D 	  0
 
 ; ************ PROGRAMMA TEST ************
 
 .orig		x3000
 		LEA	R0, array		; in R0 <- indirizzo inizio array interi (/0)
 
-; ************ SOTTOPROGRAMMA ************
+; ************ SOTTOPROGRAMMA GAP ************
 
 ; GAP						; nome sottoprogramma
 
