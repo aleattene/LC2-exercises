@@ -1,4 +1,3 @@
-
 ; ************ DESCRIZIONE SOTTOPROGRAMMA ************
 
 Il seguente sottoprogramma denominato GAP riceve nel registro R0 l’indirizzo della prima cella
