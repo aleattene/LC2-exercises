@@ -75,7 +75,6 @@ store1		.blkw	1
 store2		.blkw	1
 store3		.blkw	1
 
-
 ;interoN	.fill	#-4
 ;interoN	.fill	#2
 interoN		.fill	#10
