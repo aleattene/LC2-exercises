@@ -1,3 +1,13 @@
+************ DESCRIZIONE SOTTOPROGRAMMA ************
+
+Il seguente sottoprogramma denominato FIBONACCI riceve nel registro R0 il numero intero N e
+restituisce sempre in R0 lâ€™ennesimo termine F^N della sequenza di Fibonacci.
+Si ricorda che il termine N-esimo della sequenza di Fibonacci Ã¨ dato da:
+		F(N) = F(N-1) + F(N-2)
+con F(1) = 1 e F(2) = 1. Si ipotizzi che sia F(N) = 0 per N â‰¤ 0
+Nonostante l'utilizzo di altri registri della CPU, il sottoprogramma restituisce 
+il controllo al programma chiamante senza che tali registri risultino alterati.
+
 ; ********* PROGRAMMA TEST ************
 .orig		x3000
 		LD	R0,interoN	; carico in R0 il valore intero N
@@ -13,12 +23,12 @@
 		AND	R0,R0,R0	; verifico il valore presente in R0
 		BRNZ	out_zero	; se trovo N minore o uguale a zero vado a output_zero
 
-; da qui numero N è posiTivo
+; da qui numero N posiTivo
 
-		ADD	R0,R0,#-2	; verifico se il numero è 1 (BRn) oppure 2 (BRz)	
+		ADD	R0,R0,#-2	; verifico se il numero Ã¨ 1 (BRn) oppure 2 (BRz)	
 		BRNZ	out_uno		; se trovo N uguale a 1 o 2 vado a output_1
 		
-; da qui il numero N è maggiore di 2 altrimenti avrei bypassato questa parte di codice
+; da qui numero N maggiore di 2 altrimenti avrei bypassato questa parte di codice
 		
 		AND	R1,R1,#0	; azzero il registro R1 da impostare come (Fn-2)
 		AND	R2,R2,#0	; azzero il registro R2 da impostare come (Fn-1)
@@ -27,7 +37,7 @@
 ciclo		AND	R3,R3,#0	; azzero registro da utilizzare per Fn
 		ADD	R3,R2,R1	; calcolo Fn = Fn-1 + Fn-2 (R2+R1)
 		ADD	R0,R0,-1	; decremento di 1 il valore di R0
-		BRZ	out_n		; se ottengo zero la sequenza da calcolare è terminata
+		BRZ	out_n		; se ottengo zero la sequenza da calcolare Ã¨ terminata
 					; e vado ad emetterla in output....
 					; altrimenti.....
 		ADD	R1,R2,#0	; Fn-1 diventa Fn-2 (contenuto R2 -> contenuto R1)
@@ -62,9 +72,4 @@ store3		.blkw	1
 ;interoN	.fill	#2
 interoN		.fill	#10
 
-
-
-
-
-
-.end
+.end					; fine programma
