@@ -8,7 +8,15 @@ con F(1) = 1 e F(2) = 1. Si ipotizzi che sia F(N) = 0 per N ≤ 0
 Nonostante l'utilizzo di altri registri della CPU, il sottoprogramma restituisce 
 il controllo al programma chiamante senza che tali registri risultino alterati.
 
+************ ESEMPIO FUNZIONAMENTO SOTTOPROGRAMMA ************
+
+	INPUT 			OUTPUT
+	R0 	10 		R0 	55
+	R0 	 2 		R0 	 1
+	R0 	-4 		R0 	 0
+
 ; ********* PROGRAMMA TEST ************
+
 .orig		x3000
 		LD	R0,interoN	; carico in R0 il valore intero N
 
