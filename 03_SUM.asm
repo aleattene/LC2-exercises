@@ -10,6 +10,18 @@ complemento a due e restituisce:
 Nonostante l'utilizzo di altri registri della CPU, il sottoprogramma restituisce 
 il controllo al programma chiamante senza che tali registri risultino alterati.
 
+; ************** ESEMPI FUNZIONAMENTO SOTTOPROGRAMMA **************
+
+	INPUT 			OUTPUT
+	R0 	 15000 		R0 	 14000
+	R1 	 -1000 		R1 	     0
+
+	R0 	 20000 		R0 	-24536
+	R1 	 21000 		R1 	     1
+
+	R0 	-25000 		R0 	 18536
+	R1 	-22000 		R1 	    -1
+
 ; ************** PROGRAMMA TEST **************
 
 .orig		x3000
