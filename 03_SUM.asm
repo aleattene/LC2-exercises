@@ -1,9 +1,22 @@
-; ************** PROGRAMMA TEST ************
+; ************** DESCRIZIONE SOTTOPROGRAMMA **************
+
+Il seguente sottoprogramma denominato SUM riceve nei registri R0 e R1 due numeri a 16 bit in
+complemento a due e restituisce:
+- nel registro R0 la somma dei due numeri
+- nel registo R1 il valore:
+	-  0 se la somma è corretta;
+	-  1 se si è verificato overflow;
+	- -1 se si è verficato underflow.
+Nonostante l'utilizzo di altri registri della CPU, il sottoprogramma restituisce 
+il controllo al programma chiamante senza che tali registri risultino alterati.
+
+; ************** PROGRAMMA TEST **************
+
 .orig		x3000
 		LD	R0, num_1	; in R0 <- contenuto cella ind num_1		
 		LD	R1, num_2	; in R1 <- contenuto cella ind num_2	
 
-; ************ SOTTOPROGRAMMA *************
+; ************** SOTTOPROGRAMMA **************
 
 ; SUM					; nome del sottoprogramma
 		
