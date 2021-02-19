@@ -1,3 +1,17 @@
+; ************ DESCRIZIONE SOTTOPROGRAMMA ************
+
+Il seguente sottoprogramma denominato KCAL riceve nel registro R0 l’indirizzo della prima cella
+di una zona di memoria contenente una stringa di caratteri codificati in codice ASCII.
+La stringa è terminata dal valore 0 (corrispondente al carattere NUL) e rappresenta 
+le tipologie di percorso di corsa campestre che un atleta deve superare, con le seguenti convenzioni:
+- la lettera “P” indica un tratto di percorso Piano, per superare il quale l’atleta consuma 1 kcaloria;
+- la lettera “F” indica un Fossato, per superare il quale l’atleta consuma 2 kcalorie;
+- la lettera “S” indica un tratto di percorso in Salita, per superare il quale l’atleta consuma 4 kcalorie;
+Il sottoprogramma restituisce nel registro R0 il numero totale di kcalorie necessarie all’atleta per completare
+la corsa campestre.
+Nonostante l'utilizzo di altri registri della CPU, il sottoprogramma restituisce 
+il controllo al programma chiamante senza che tali registri risultino alterati.
+
 ; ********* PROGRAMMA TEST ***********
 
 .orig		x3000
@@ -25,15 +39,15 @@ ciclo		LDR	R1,R0,#0	; in R1 <- valore puntato da R0
 		ADD	R0,R0,#1	; incremento di una cella indirizzo in R0
 		
 		ADD	R5,R1,R2	; verifico se "P" -> se trovo -> piano
-		BRZ	piano		; se risultato � zero ho trovato "P"
+		BRZ	piano		; se risultato è zero ho trovato "P"
 		
 		ADD	R5,R1,R3	; verifico se "F"-> se trovo -> fossato
-		BRZ	fossato		; se risultato � zero ho trovato "F"
+		BRZ	fossato		; se risultato è zero ho trovato "F"
 		
 		ADD	R5,R1,R4	; verifico se "S" -> se trovo -> salita
-		BRZ	salita		; se risultato � zero ho trovato "S"
+		BRZ	salita		; se risultato è zero ho trovato "S"
 		
-		BRNP	ciclo		; non ho trovato n� "P", ne "F", n� "S"
+		BRNP	ciclo		; non ho trovato nè "P", ne "F", nè "S"
 					; (non previsto espliticamente da specifica)
 
 piano		ADD	R6,R6,#1	; incremento contatore di 1 Kcal
