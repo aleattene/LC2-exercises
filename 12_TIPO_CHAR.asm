@@ -67,19 +67,19 @@ R1 	4 			R1 	5 			R1 	 2
 		BRNZ	minu		; se risultato nullo/negativo -> minuscola 
 		BRP	no_car		; se risultato positivo -> car controllo 
 
-car_cont	ADD R1,R1,#1		; output R1 = 1 (come da specifica)
+car_cont	ADD 	R1,R1,#1	; output R1 = 1 (come da specifica)
 		BRNZP	fine
 
-cifra		ADD R1,R1,#2		; output R1 = 2 (come da specifica)
+cifra		ADD 	R1,R1,#2	; output R1 = 2 (come da specifica)
 		BRNZP	fine
 
-MAIU		ADD R1,R1,#3		; output R1 = 3 (come da specifica)
+MAIU		ADD 	R1,R1,#3	; output R1 = 3 (come da specifica)
 		BRNZP	fine
 
-minu		ADD R1,R1,#4		; output R1 = 4 (come da specifica)
+minu		ADD 	R1,R1,#4	; output R1 = 4 (come da specifica)
 		BRNZP	fine
 
-no_car		ADD R1,R1,#5		; output R1 = 5 (come da specifica)
+no_car		ADD 	R1,R1,#5	; output R1 = 5 (come da specifica)
 		
 fine		LD	R2, store2	; contenuto cella indirizzata store2 -> in R2
 		LD	R3, store3	; contenuto cella indirizzata store3 -> in R3
