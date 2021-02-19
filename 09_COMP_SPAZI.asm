@@ -17,6 +17,15 @@ Si ricorda che nel codice ASCII il carattere spazio ha codifica decimale 32 (esa
 Nonostante l'utilizzo di altri registri della CPU, il sottoprogramma restituisce 
 il controllo al programma chiamante senza che tali registri risultino alterati.
 
+************ ESEMPIO FUNZIONAMENTO SOTTOPROGRAMMA ************
+
+INPUT
+R0 punta alla zona di memoria contenente la stringa “Un esempio di frase con spazi multipli tra le parole”
+
+OUTPUT
+R1 punta alla zona di memoria contenente la stringa “Un esempio di frase con spazi multipli tra le parole”
+R2 contiene il valore 9
+
 ; ********* PROGRAMMA TEST *************
 
 .orig		x3000
