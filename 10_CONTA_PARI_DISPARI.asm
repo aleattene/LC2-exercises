@@ -11,6 +11,16 @@ Si ricorda che un numero pari codificato in binario ha la caratteristica di aver
 Nonostante l'utilizzo di altri registri della CPU, il sottoprogramma restituisce 
 il controllo al programma chiamante senza che tali registri risultino alterati.
 
+************ ESEMPIO FUNZIONAMENTO SOTTOPROGRAMMA ************
+
+	   INPUT 	     			 OUTPUT
+R0   X3408 	x3408 	  112 		R0     4 	x3408 	  112
+R1   X340D 	x3409 	  -27 		R1     2 	x3409 	  -27
+		x340A 	-1232 				x340A 	-1232
+		x340B 	  450 				x340B 	  450
+		x340C 	   15 				x340C 	   15
+		x340D 	  120 				x340D 	  120
+
 ; ************** PROGRAMMA TEST ***********
 
 .orig		x3000
