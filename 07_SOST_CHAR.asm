@@ -14,6 +14,16 @@ minuscola nella corrispondente maiuscola basta sottrarre 32 al codice della lett
 Nonostante l'utilizzo di altri registri della CPU, il sottoprogramma restituisce 
 il controllo al programma chiamante senza che tali registri risultino alterati.
 
+************ ESEMPIO FUNZIONAMENTO SOTTOPROGRAMMA ************
+
+INPUT
+R0 punta alla zona di memoria contenente la stringa “La lapvde rvporta la data MCMXXV”,
+R1 contiene il codice ASCII della lettera “v”
+R2 contiene il codice ASCII della lettera “i”
+
+OUTPUT
+La stringa è diventata “La lapide riporta la data MCMXXI”.
+
 ; ******** PROGRAMMA TEST ************
 
 .orig		x3000
