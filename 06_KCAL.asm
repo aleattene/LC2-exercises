@@ -75,11 +75,11 @@ fine		ADD	R0,R6,#0	; contenuto R6 -> in R0 (come da specifica)
 		LD	R5, store5	; contenuto cella indirizzo store 5 -> in R5
 		LD	R6, store6	; contenuto cella indirizzo store 6 -> in R6
 
-; 	RET
+; 	RET				; ritorno da sottoprogramma
 
 ; *********** VARIABILI ************
 
-stringa		.stringz "PPFPSPFSSP"
+stringa		.stringz "PPFPSPFSSP"	
 
 car_P		.fill	#-80		; codice ASCII (negativo) carattere "P"
 car_F		.fill	#-70		; codice ASCII (negativo) carattere "F"
