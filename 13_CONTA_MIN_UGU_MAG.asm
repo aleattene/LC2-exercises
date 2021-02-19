@@ -1,3 +1,17 @@
+; ************ DESCRIZIONE SOTTOPROGRAMMA ************
+
+Il seguente sottoprogramma denominato CONTA_MIN_UGU_MAG riceve:
+- nel registro R0 l’indirizzo della prima cella di una zona di memoria contenente una sequenza di numeri
+	codificati in complemento a 2 su 16 bit. La sequenza, non ordinata, è terminata dal valore 0 
+	(che non fa parte della sequenza);
+- nel registro R1 un valore da confrontare codificato in complemento a 2 su 16 bit.
+Il sottoprogramma inoltre, restituisce:
+- nel registro R0 il conteggio dei numeri della sequenza minori del valore da confrontare;
+- nel registro R1 il conteggio dei numeri della sequenza uguali al valore da confrontare;
+- nel registro R2 il conteggio dei numeri della sequenza maggiori del valore da confrontare.
+Nonostante l'utilizzo di altri registri della CPU, il sottoprogramma restituisce 
+il controllo al programma chiamante senza che tali registri risultino alterati.
+
 ; *********** PROGRAMMA TEST ************
 
 .orig		x3000
