@@ -1,4 +1,5 @@
 ; ********* DESCRIZIONE SOTTOPROGRAMMA **********
+
 Il seguente sottoprogramma denominato SUM_ASS_ARRAY riceve:
 - nei registri R0 e R1 gli indirizzi delle prime celle di due array di interi 
 	(cioè di due zone di memoria contenenti due sequenze di numeri a 16 bit in 
@@ -12,6 +13,25 @@ corrispondente cella della zona di memoria puntata da R2.
 Non viene effettuato il controllo di eventuali overflow.
 Nonostante l'utilizzo di altri registri della CPU, il sottoprogramma restituisce 
 il controllo al programma chiamante senza che tali registri risultino alterati.
+
+; ********* ESEMPIO FUNZIONAMENTO SOTTOPROGRAMMA **********
+
+		INPUT					  OUTPUT
+	
+R0 	X3408 		x3408 	    12 		R0 	-	x3408 	    12
+R1 	X340D 		x3409 	   -12 		R1 	-	x3409 	   -12
+R2 	X3412 		x340A 	 32767 		R2 	-	x340A 	 32767
+			x340B 	-32767 				x340B 	-32767
+			x340C 	     0 				x340C 	     0
+			x340D 	     3 				x340D 	     3
+			x340E 	    -3 				x340E 	    -3
+			x340F 	     1 				x340F 	     1
+			x3410 	     1 				x3410 	     1
+			x3411 	     0 				x3411 	     0
+			x3412 	     -				x3412 	    15
+			x3413 	     - 				x3413 	    15
+			x3414 	     -				x3414 	-32768
+			x3415 	     -				x3415 	-32768
 
 ; ********* PROGRAMMA TEST **********
 
