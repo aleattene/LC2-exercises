@@ -55,8 +55,8 @@ ciclo		ADD	R3,R1,R0	; confronto tra fine array e inizio array
 pari		ADD	R4,R4,#1	; incremento contatore numeri pari
 		BRNZP	ciclo		; si prosegue ciclo sino a fine array
 		
-fine		ADD R0,R4,#0		; contenuto R4 -> in R0 (come da specifica)
-		ADD R1,R5,#0		; contenuto R5 -> in R1 (come da specifica)
+fine		ADD 	R0,R4,#0	; contenuto R4 -> in R0 (come da specifica)
+		ADD 	R1,R5,#0	; contenuto R5 -> in R1 (come da specifica)
 
 		LD	R2, store2	; contenuto cella di indir store2 -> in R2
 		LD	R3, store3	; contenuto cella di indir store3 -> in R3	
