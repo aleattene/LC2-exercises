@@ -9,6 +9,13 @@ con F(1) = 1 e F(2) = 2. Si ipotizza inoltre che F(N) = 0 per N ≤ 0
 Nonostante l'utilizzo di altri registri della CPU, il sottoprogramma restituisce 
 il controllo al programma chiamante senza che tali registri risultino alterati.
 
+; ************ ESEMPIO FUNZIONAMENTO SOTTOPROGRAMMA ************
+
+	   INPUT 		  OUTPUT
+	R0 	10 		R0 	47
+	R0 	 2 		R0 	 2
+	R0 	-4 		R0 	 0
+
 ; ********* PROGRAMMA TEST ************
 
 .orig		x3000
