@@ -10,7 +10,7 @@ il controllo al programma chiamante senza che tali registri risultino alterati.
 
 ************ ESEMPIO FUNZIONAMENTO SOTTOPROGRAMMA ************
 
-	INPUT 			OUTPUT
+	   INPUT 		  OUTPUT
 	R0 	10 		R0 	55
 	R0 	 2 		R0 	 1
 	R0 	-4 		R0 	 0
