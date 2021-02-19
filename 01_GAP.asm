@@ -10,7 +10,7 @@ di overflow/underflow).
 Nonostante l'utilizzo di altri registri della CPU, il sottoprogramma restituisce 
 il controllo al programma chiamante senza che tali registri risultino alterati.
 
-************ ESEMPIO FUNZIONAMENTO SOTTOPROGRAMMA ************
+; ************ ESEMPIO FUNZIONAMENTO SOTTOPROGRAMMA ************
 
 		INPUT 					OUTPUT
 R0 X3408 	x3408 	112 	R0 139=112-(-27) 	x3408 	112
