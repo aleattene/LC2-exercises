@@ -1,3 +1,21 @@
+; ************ DESCRIZIONE SOTTOPROGRAMMA ************
+
+Il seguente sottoprogramma denominato SUM_ARRAY riceve:
+- nei registri R0 e R1 gli indirizzi delle prime celle di due array di interi (cioè di due zone di memoria
+	contenenti due sequenze di numeri a 16 bit in complemento a due); le sequenze hanno uguale
+	lunghezza e sono terminate dal valore 0 (zero) che non fa parte dei valori da considerare
+- nel registro R2 l’indirizzo della prima cella di una zona di memoria libera, di lunghezza pari a quella
+delle sequenze di cui sopra.
+Il sottoprogramma inoltre:
+- somma a ciascun numero della sequenza puntata da R0 il corrispondente numero nella sequenza
+	puntata da R1 e sostituisce tale somma ai numeri della sequenza puntata da R0;
+- inserisce in ciascuna cella della zona di memoria puntata da R2 i valori:
+	-  0 se la somma dei corrispondenti valori puntati da R0 e R1 è corretta;
+	-  1 se si è verificato overflow;
+	- -1 se si è verficato underflow.
+Nonostante l'utilizzo di altri registri della CPU, il sottoprogramma restituisce 
+il controllo al programma chiamante senza che tali registri risultino alterati.
+
 ; ********** PROGRAMMA TEST *************
 
 .orig		X3000
