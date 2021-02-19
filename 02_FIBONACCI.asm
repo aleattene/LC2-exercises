@@ -1,4 +1,4 @@
-************ DESCRIZIONE SOTTOPROGRAMMA ************
+; ************ DESCRIZIONE SOTTOPROGRAMMA ************
 
 Il seguente sottoprogramma denominato FIBONACCI riceve nel registro R0 il numero intero N e
 restituisce sempre in R0 l’ennesimo termine F^N della sequenza di Fibonacci.
@@ -6,9 +6,9 @@ Si ricorda che il termine N-esimo della sequenza di Fibonacci è dato da:
 		F(N) = F(N-1) + F(N-2)
 con F(1) = 1 e F(2) = 1. Si ipotizzi che sia F(N) = 0 per N ≤ 0
 Nonostante l'utilizzo di altri registri della CPU, il sottoprogramma restituisce 
-il controllo al programma chiamante senza che tali registri risultino alterati.
+il controllo al git programma chiamante senza che tali registri risultino alterati.
 
-************ ESEMPIO FUNZIONAMENTO SOTTOPROGRAMMA ************
+; ************ ESEMPIO FUNZIONAMENTO SOTTOPROGRAMMA ************
 
 	   INPUT 		  OUTPUT
 	R0 	10 		R0 	55
