@@ -1,3 +1,18 @@
+; ************ DESCRIZIONE SOTTOPROGRAMMA ************
+
+Il seguente sottoprogramma denominato TIPO_CAR riceve nel registro R0 il codice ASCII standard
+di un carattere (quindi un valore decimale compreso fra 0 e 127, estremi inclusi) e restituisce
+nel registro R1 un numero che indichi il tipo di carattere ricevuto in ingresso, ovvero:
+- 1 se il carattere è un carattere di controllo (codifica ASCII minore del numero decimale 32);
+- 2 se il carattere è una cifra (codifica ASCII compresa fra i numeri decimali 48 e 57, estremi inclusi);
+- 3 se il carattere è una lettera maiuscola (codifica ASCII compresa fra i numeri decimali 65 e 90, estremi
+	inclusi);
+- 4 se il carattere è una lettera minuscola (codifica ASCII compresa fra i numeri decimali 97 e 122, estremi
+	inclusi);
+- 5 se il carattere non è nessuno dei tipi precedenti.
+Nonostante l'utilizzo di altri registri della CPU, il sottoprogramma restituisce 
+il controllo al programma chiamante senza che tali registri risultino alterati.
+
 ; ********** PROGRAMMA TEST *********
 
 .orig		x3000
