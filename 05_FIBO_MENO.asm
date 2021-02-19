@@ -1,4 +1,16 @@
+; ************ DESCRIZIONE SOTTOPROGRAMMA ************
+
+Il seguente sottoprogramma denominato FIBO_MENO riceve nel registro R0 il numero intero N e
+restituisce sempre in R0 l’ennesimo termine F(N) di una sequenza simile a quella di Fibonacci,
+ma con l’operatore meno al posto del più. 
+In altre parole, il termine N-esimo della sequenza è dato da:
+			F(N) = F(N-2) - F(N-1)
+con F(1) = 1 e F(2) = 2. Si ipotizza inoltre che F(N) = 0 per N ≤ 0
+Nonostante l'utilizzo di altri registri della CPU, il sottoprogramma restituisce 
+il controllo al programma chiamante senza che tali registri risultino alterati.
+
 ; ********* PROGRAMMA TEST ************
+
 .orig		x3000
 		LD	R0,interoN	; carico in R0 il valore intero N
 
@@ -14,13 +26,13 @@
 		AND	R0,R0,R0	; verifico il valore presente in R0
 		BRNZ	out_zero	; se trovo N minore o uguale a zero vado a output_zero
 
-; da qui numero N � posiTivo 
+; da qui numero N è posiTivo 
 
-		ADD	R0,R0,#-2	; verifico se il numero � 1 (BRn) oppure 2 (BRz)	
+		ADD	R0,R0,#-2	; verifico se il numero è 1 (BRn) oppure 2 (BRz)	
 		BRN	out_uno		; se trovo N uguale a 1 -> output_1 (specifica)
 		BRZ	out_due		; se trovo N uguale a 2 -> output_2 (specifica)
 		
-; da qui il numero N � maggiore di 2 altrimenti avrei bypassato questa parte di codice
+; da qui il numero N è maggiore di 2 altrimenti avrei bypassato questa parte di codice
 		
 		AND	R1,R1,#0	; azzero il registro R1 da impostare come (Fn-1)
 		AND	R2,R2,#0	; azzero il registro R2 da impostare come (Fn-2)
@@ -33,7 +45,7 @@ ciclo		NOT	R4,R1		; in R4 -> NOT bit a bit di R1 (attenzione a questo)
 		
 		ADD	R3,R2,R4	; calcolo Fn = Fn-2 - Fn-1 (R2+(-R4))
 		ADD	R0,R0,-1	; decremento di 1 il valore di R0
-		BRZ	out_n		; se ottengo zero la sequenza da calcolare � terminata
+		BRZ	out_n		; se ottengo zero la sequenza da calcolare è terminata
 					; e vado ad emetterla in output....
 					; altrimenti.....
 		ADD	R2,R1,#0	; Fn-1 diventa Fn-2 (contenuto R1 -> in R2)
