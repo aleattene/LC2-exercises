@@ -13,6 +13,14 @@ nel registro R1 un numero che indichi il tipo di carattere ricevuto in ingresso,
 Nonostante l'utilizzo di altri registri della CPU, il sottoprogramma restituisce 
 il controllo al programma chiamante senza che tali registri risultino alterati.
 
+************ ESEMPI FUNZIONAMENTO SOTTOPROGRAMMA ************
+
+INPUT 1			 	INPUT 2	 			INPUT 3	
+R0    109 (car. “m”) 		R0     36 (car. “$”) 		R0 	55 (car. “7”)
+
+OUTPUT 1			OUTPUT 2 			OUTPUT 3	
+R1 	4 			R1 	5 			R1 	 2
+
 ; ********** PROGRAMMA TEST *********
 
 .orig		x3000
