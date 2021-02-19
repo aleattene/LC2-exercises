@@ -16,6 +16,14 @@ nella corrispondente minuscola basta sommare x20 al codice della lettera MAIUSCO
 Nonostante l'utilizzo di altri registri della CPU, il sottoprogramma restituisce 
 il controllo al programma chiamante senza che tali registri risultino alterati.
 
+************ ESEMPIO FUNZIONAMENTO SOTTOPROGRAMMA ************
+
+INPUT
+R0 punta alla zona di memoria contenente la stringa “Buon Sabato 7 febbraio 2015”, R1 contiene la lettera “b”
+
+OUTPUT
+R0 contiene il valore 1, R1 contiene il valore 3
+
 ; ********* PROGRAMMA TEST *********
 
 .orig		x3000
