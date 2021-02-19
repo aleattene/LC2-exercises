@@ -1,3 +1,19 @@
+; ************ DESCRIZIONE SOTTOPROGRAMMA ************
+
+Il seguente sottoprogramma denominato SOST_CHAR riceve:
+- nel registro R0 l’indirizzo della prima cella di una zona di memoria contenente una stringa di caratteri
+	codificati in codice ASCII. La stringa è terminata dal valore 0 (corrispondente al carattere NUL);
+- nel registro R1 il codice ASCII di una lettera minuscola da eliminare (ricordando che le lettere minuscole
+	hanno codifiche decimali da “a”=97 a “z”=122);
+- nel registro R2 il codice ASCII di una lettera minuscola da inserire.
+Il sottoprogramma modifica la stringa di caratteri, sostituendo alla lettera da eliminare la lettera da
+inserire. Qualora la lettera eliminata sia MAIUSCOLA, anche la lettera inserita è MAIUSCOLA. 
+Si ricorda che la differenza numerica fra la codifica ASCII di una lettera minuscola e quella della
+corrispondente lettera maiuscola espressa in notazione decimale è pari a 32 (quindi per convertire una lettera
+minuscola nella corrispondente maiuscola basta sottrarre 32 al codice della lettera minuscola).
+Nonostante l'utilizzo di altri registri della CPU, il sottoprogramma restituisce 
+il controllo al programma chiamante senza che tali registri risultino alterati.
+
 ; ******** PROGRAMMA TEST ************
 
 .orig		x3000
