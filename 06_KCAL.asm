@@ -12,6 +12,13 @@ la corsa campestre.
 Nonostante l'utilizzo di altri registri della CPU, il sottoprogramma restituisce 
 il controllo al programma chiamante senza che tali registri risultino alterati.
 
+************ ESEMPIO FUNZIONAMENTO SOTTOPROGRAMMA ************
+INPUT 
+R0 punta alla zona di memoria contenente la stringa “PPFPSPFSSP”
+
+OUTPUT
+R0 contiene il valore 21 (5P x 1 + 2F x 2 + 3S x 4)
+
 ; ********* PROGRAMMA TEST ***********
 
 .orig		x3000
