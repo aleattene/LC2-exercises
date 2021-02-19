@@ -1,11 +1,26 @@
-; ********* PROGRAMMA TEST ***********
+; ********* DESCRIZIONE SOTTOPROGRAMMA **********
+Il seguente sottoprogramma denominato SUM_ASS_ARRAY riceve:
+- nei registri R0 e R1 gli indirizzi delle prime celle di due array di interi 
+	(cioè di due zone di memoria contenenti due sequenze di numeri a 16 bit in 
+	complemento a due); le sequenze hanno uguale lunghezza e sono terminate dal valore 0 (zero) 
+	che non fa parte dei valori da considerare;
+- nel registro R2 l’indirizzo della prima cella di una zona di memoria libera, di lunghezza pari a 
+	quella delle sequenze di cui sopra.
+Il sottoprogramma somma il valore assoluto di ciascun numero della sequenza puntata da R0 con il
+valore assoluto del corrispondente numero nella sequenza puntata da R1 e inserisce tale somma nella
+corrispondente cella della zona di memoria puntata da R2. 
+Non viene effettuato il controllo di eventuali overflow.
+Nonostante l'utilizzo di altri registri della CPU, il sottoprogramma restituisce 
+il controllo al programma chiamante senza che tali registri risultino alterati.
+
+; ********* PROGRAMMA TEST **********
 
 .orig		x3000
 		LEA	R0, array_1	; in R0 <- indirizzo iniziale array_1
 		LEA	R1, array_2	; in R1 <- indirizzo iniziale array_2
 		LEA	R2, array_3	; in R2 <- indirizzo iniziale array_3
 		
-; ********** SOTTOPROGRAMMA ***********
+; ********** SOTTOPROGRAMMA **********
 
 ; SUM_ASS_ARRAY				; nome sottoprogramma
 
