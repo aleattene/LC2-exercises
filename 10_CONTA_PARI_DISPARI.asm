@@ -1,3 +1,16 @@
+; ************ DESCRIZIONE SOTTOPROGRAMMA ************
+
+Il seguente sottoprogramma denominato CONTA_PARI_DISPARI riceve:
+- nel registro R0 l’indirizzo della prima cella di una zona di memoria contenente una sequenza di numeri
+	a 16 bit in complemento a due;
+- nel registro R1 l’indirizzo della cella contenente l’ultimo numero della sequenza di cui al punto precedente.
+Il sottoprogramma inoltre, restituisce:
+- nel registro R0 il conteggio di quanti numeri pari sono presenti nella sequenza;
+- nel registro R1 il conteggio di quanti numeri dispari sono presenti nella sequenza.
+Si ricorda che un numero pari codificato in binario ha la caratteristica di avere 0 come cifra di peso 2^0.
+Nonostante l'utilizzo di altri registri della CPU, il sottoprogramma restituisce 
+il controllo al programma chiamante senza che tali registri risultino alterati.
+
 ; ************** PROGRAMMA TEST ***********
 
 .orig		x3000
@@ -24,7 +37,7 @@ ciclo		ADD	R3,R1,R0	; confronto tra fine array e inizio array
 		LDR	R2,R0,#0	; in R2 <- contenuto cella di indir in R0
 		ADD	R0,R0,#1	; incremento array (si avanza di una cella)
 		AND	R2,R2,#1	; AND tra contenuto R2 e #1
-		BRZ	pari		; se risultato � zero -> numero pari
+		BRZ	pari		; se risultato è zero -> numero pari
 					; altrimenti dispari....
 		ADD	R5,R5,#1	; incremento contatore numeri dispari
 		BRNZP	ciclo		; si prosegue ciclo sino a fine array
