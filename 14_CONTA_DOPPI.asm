@@ -1,4 +1,15 @@
+; ************ DESCRIZIONE SOTTOPROGRAMMA ************
+
+Il seguente sottoprogramma denominato CONTA_DOPPI riceve nel registro R0 l’indirizzo della
+prima cella di una zona di memoria contenente una sequenza di numeri a 16 bit in complemento a 2; 
+il valore 0 (zero) termina la sequenza e non ne fa parte.
+Il sottoprogramma inoltre, restituisce nel registro R0 il conteggio di quante volte un numero della sequenza è seguito
+dal suo doppio.
+Nonostante l'utilizzo di altri registri della CPU, il sottoprogramma restituisce 
+il controllo al programma chiamante senza che tali registri risultino alterati.
+
 ; ********** PROGRAMMA TEST ************
+
 .orig		x3000
 		LEA	R0, arrayN	; in R0 <- indirizzo inizio arrayN
 
@@ -21,7 +32,7 @@ ciclo		LDR	R2,R0,#0	; in R1 <- contenuto cella ind R0 + 1
 		ADD	R0,R0,#1	; incremento di 1 indirizzo array N (in R0)
 		NOT 	R1,R1
 		ADD	R1,R1,#1	; Ca2 primo numero per confronto successivo 
-		ADD	R3,R2,R1	; primo confronto numeri (ottengo event.met�)
+		ADD	R3,R2,R1	; primo confronto numeri (ottengo event.metà)
 		ADD	R3,R3,R1	; secondo confronto numeri
 		BRZ	doppio		; se ottengo zero -> n+1 = 2 n
 		ADD	R1,R2,#0	; altrimenti si avanza (a partire da n+1)
