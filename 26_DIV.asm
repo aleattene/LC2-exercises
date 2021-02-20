@@ -1,4 +1,13 @@
+
+Il seguente sottoprogramma denominato DIV riceve nei registri R0 e R1 i due numeri N e D,
+entrambi positivi codificati in complemento a due (quindi compresi fra 1 e 32767).
+Il sottoprogramma inoltre restituisce nel registro R0 il numero intero Q = N/D, ovvero il quoziente 
+arrotondato per difetto della divisione N/D.
+Nonostante l'utilizzo di altri registri della CPU, il sottoprogramma restituisce 
+il controllo al programma chiamante senza che tali registri risultino alterati.
+
 ;********* PROGRAMMA ***********
+
 .ORIG		x3000
 		LD	R0, interoN	; metto in R0 il numero intero positivo N
 		LD	R1, interoD	; metto in R1 il numero intero positivo D
@@ -50,6 +59,4 @@ store2		.blkw	1		; riservo una cella memoria per registro R2
 store3		.blkw	1		; riservo una cella memoria per registro R3
 store4		.blkw	1		; riservo una cella memoria per registro R4
 
-
 .END
-
