@@ -1,3 +1,32 @@
+; ************ DESCRIZIONE SOTTOPROGRAMMA ************
+
+Il seguente sottoprogramma denominato SEGNO_ARRAY riceve:
+- nei registri R0 e R1 gli indirizzi rispettivamente della prima e dell’ultima cella di una zona di memoria
+	contenente l’array I di numeri interi in complemento a due;
+- nel registro R2 l’indirizzo della prima cella di una zona di memoria destinata all’array S.
+Il sottoprogramma inoltre, inserisce in ogni elemento dell’array S:
+	-   -1 se il corrispondente elemento dell’array I è negativo;
+	-    0 se il corrispondente elemento dell’array I è nullo; 
+	-    1 se il corrispondente elemento dell’array I è positivo. 
+All’uscita dal sottoprogramma, i registri R0, R1 e R2 contengono rispettivamente il numero di
+elementi negativi, nulli e positivi dell’array I.
+Nonostante l'utilizzo di altri registri della CPU, il sottoprogramma restituisce 
+il controllo al programma chiamante senza che tali registri risultino alterati.
+
+; ************ ESEMPIO FUNZIONAMENTO SOTTOPROGRAMMA ************
+
+           INPUT 					     OUTPUT
+R0    x3408 	x3408 	   1     I 		R0     2     x3408       1     I
+R1    x340C 	x3409     -3 			R1     1     x3409      -3
+R2    x3410 	x340A      0 			R2     2     x340A       0
+   		x340B   -121 				     x340B    -121
+		x340C 	  90 				     x340C 	90
+		x3410      -     S 			     x3410       1     S
+		x3411 	   -				     x3411 	-1
+		x3412      -				     x3412 	 0
+		x3413      -				     x3413 	-1
+		x3414      -				     x3414 	 1
+
 ; ******** PROGRAMMA TEST ***********
 
 .orig		x3000
@@ -30,12 +59,12 @@ ciclo		ADD	R3,R0,R1	; in R3 <- confronto arrayI_init - arrayI_fine
 		BRZ	nullo
 		BRP 	positivo
 
-negativo	AND	R3,R3,#0	; azzero R3 poich� precedentemente utilizzato 
+negativo	AND	R3,R3,#0	; azzero R3 poichè precedentemente utilizzato 
 		ADD	R3,R3,#-1	; in R3 <- valore "-1" per output (num negativo)
 		ADD	R4,R4,#1	; incremento contatore numeri negativi
 		BRNZP	scrivi		; vado scrivere valore R3 in cella puntata da R2
 		
-positivo	AND	R3,R3,#0	; azzero R3 poich� precedentemente utilizzato 
+positivo	AND	R3,R3,#0	; azzero R3 poichè precedentemente utilizzato 
 		ADD	R3,R3,#1	; in R3 <- valore "1" per output (num positivo)
 		ADD	R5,R5,#1	; incremento contatore numeri positivi
 		BRNZP	scrivi		; vado scrivere valore R3 in cella puntata da R2
