@@ -1,4 +1,18 @@
+; ************ DESCRIZIONE SOTTOPROGRAMMA ************
+
+Il seguente sottoprogramma denominato CONTA_N_Z_P riceve:
+- nel registro R0 l’indirizzo della prima cella di una zona di memoria contenente in ciascuna cella un numero
+	a 16 bit in complemento a 2 (quindi compreso fra -32.768 e + 32.767);
+- nel registro R1 l'indirizzo dell'ultima cella della suddetta zona di memoria.
+Il sottoprogramma inoltre, restituisce:
+- nel registro R0 il conteggio dei numeri della sequenza negativi;
+- nel registro R1 il conteggio dei numeri della sequenza nulli;
+- nel registro R2 il conteggio dei numeri della sequenza positivi.
+Nonostante l'utilizzo di altri registri della CPU, il sottoprogramma restituisce 
+il controllo al programma chiamante senza che tali registri risultino alterati.
+
 ; ********** PROGRAMMA TEST **********
+
 .orig 		x3000
 		LEA	R0, arrayINIT	; acquisico in R0 indirizzo inizio zona di memoria
 		LEA	R1, arrayFINE	; acquisico in R1 indirizzo inizio zona di memoria
