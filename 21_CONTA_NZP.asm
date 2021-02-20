@@ -11,6 +11,16 @@ Il sottoprogramma inoltre, restituisce:
 Nonostante l'utilizzo di altri registri della CPU, il sottoprogramma restituisce 
 il controllo al programma chiamante senza che tali registri risultino alterati.
 
+; ************ ESEMPIO FUNZIONAMENTO SOTTOPROGRAMMA ************
+
+           INPUT 				 OUTPUT
+R0    x3408	x3408 	-56 		R0     2 	x3408  	 -56
+R1    x340D 	x3409 	 15 		R1     1 	x3409  	  15
+      		x340A    -9 		R2     3 	x340A 	  -9
+		x340B 	  0 				x340B 	   0
+		x340C 	 27 				x340C 	  27
+		x340D 	 12 				x340D 	  12
+
 ; ********** PROGRAMMA TEST **********
 
 .orig 		x3000
