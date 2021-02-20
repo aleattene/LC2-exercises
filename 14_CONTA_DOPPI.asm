@@ -3,10 +3,20 @@
 Il seguente sottoprogramma denominato CONTA_DOPPI riceve nel registro R0 l’indirizzo della
 prima cella di una zona di memoria contenente una sequenza di numeri a 16 bit in complemento a 2; 
 il valore 0 (zero) termina la sequenza e non ne fa parte.
-Il sottoprogramma inoltre, restituisce nel registro R0 il conteggio di quante volte un numero della sequenza è seguito
-dal suo doppio.
+Il sottoprogramma inoltre, restituisce nel registro R0 il conteggio di quante volte un numero 
+della sequenza è seguito dal suo doppio.
 Nonostante l'utilizzo di altri registri della CPU, il sottoprogramma restituisce 
 il controllo al programma chiamante senza che tali registri risultino alterati.
+
+; ************ ESEMPIO FUNZIONAMENTO SOTTOPROGRAMMA ************
+
+	   INPUT				OUTPUT
+R0    x3408 	x3408 	   5 		R0    3 	x3408 	    5
+		x3409 	  10 				x3409 	   10
+		x340A 	  -3 				x340A 	   -3
+		x340B 	  -6 				x340B 	   -6
+		x340C 	 -12 				x340C 	  -12
+		x340D 	   0 				x340D 	    0
 
 ; ********** PROGRAMMA TEST ************
 
