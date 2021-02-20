@@ -1,3 +1,21 @@
+; ************ DESCRIZIONE SOTTOPROGRAMMA ************
+
+Il seguente sottoprogramma denominato MAIUSC_INI riceve nel registro R0 l’indirizzo della
+prima cella di una zona di memoria contenente una frase costituita da “parole” (sequenze di caratteri codificati
+in codice ASCII) separate l’una dall’altra da un singolo spazio. La stringa è terminata dal valore 0
+(corrispondente al carattere NUL).
+Se una parola della frase inizia con una lettera minuscola, il sottoprogramma converte tale lettera nella
+corrispondente lettera MAIUSCOLA, mentre non fa nulla se la parola inizia con una lettera maiuscola o
+con un carattere diverso da una lettera.
+Si ricorda che:
+- nel codice ASCII, le lettere MAIUSCOLE hanno codifiche decimali da “A”=65 a “Z”=90;
+- nel codice ASCII, le lettere minuscole hanno codifiche decimali da “a”=97 a “z”=122;
+- nel codice ASCII, il carattere “spazio” ha codifica decimale 32;
+- la differenza numerica fra la codifica ASCII di una lettera minuscola e quella della corrispondente
+	lettera MAIUSCOLA espressa in notazione decimale è pari a 32.
+Nonostante l'utilizzo di altri registri della CPU, il sottoprogramma restituisce 
+il controllo al programma chiamante senza che tali registri risultino alterati
+
 ; *********** PROGRAMMA TEST **************
 
 .orig		x3000
