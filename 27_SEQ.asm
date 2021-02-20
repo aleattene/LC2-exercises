@@ -25,7 +25,7 @@ R0 	-4 	R0 	  0
 		
 ;********** SOTTOPROGRAMMA ***********
 		
-;SEQ	
+; SEQ					; nome sottoprogramma
 		ST	R1,store1	; scrivo contenuto R1 nella cella indirizzo store1
 		ST	R2,store2	; scrivo contenuto R2 nella cella indirizzo store2
 		ST	R3,store3	; scrivo contenuto R3 nella cella indirizzo store3
