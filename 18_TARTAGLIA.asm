@@ -13,6 +13,20 @@ valori di I compresi tra 2 e N.
 Nonostante l'utilizzo di altri registri della CPU, il sottoprogramma restituisce 
 il controllo al programma chiamante senza che tali registri risultino alterati.
 
+; ************ ESEMPIO FUNZIONAMENTO SOTTOPROGRAMMA ************
+
+	INPUT (N=4) 				 OUTPUT
+R0    x3408 	x3408    1    A 	R0    -		x3408 	  1     A
+R1    x340D 	x3409    3 		R1    -		x3409     3
+      		x340A    3 				x340A	  3
+		x340B    1 				x340B	  1
+		x340C    0 				x340C 	  0
+		x340D    -    T 			x340D 	  1     T
+		x340E 	 -				x340E 	  4
+		x340F    -				x340F 	  6
+		x3410 	 -				x3410 	  4
+		x3411    -				x3411 	  1
+
 ; ********* PROGRAMMA TEST *********
 
 .orig		x3000
