@@ -1,3 +1,4 @@
+; ************ DESCRIZIONE SOTTOPROGRAMMA ************
 
 Il seguente sottoprogramma denominato DIV riceve nei registri R0 e R1 i due numeri N e D,
 entrambi positivi codificati in complemento a due (quindi compresi fra 1 e 32767).
@@ -5,6 +6,24 @@ Il sottoprogramma inoltre restituisce nel registro R0 il numero intero Q = N/D, 
 arrotondato per difetto della divisione N/D.
 Nonostante l'utilizzo di altri registri della CPU, il sottoprogramma restituisce 
 il controllo al programma chiamante senza che tali registri risultino alterati.
+
+; ************ ESEMPI FUNZIONAMENTO SOTTOPROGRAMMA ************
+
+  INPUT 1		 OUTPUT 1
+R0 	100 		R0 	 20
+R1 	  5
+
+  INPUT 2		 OUTPUT 2
+R0 	100 		R0 	 16
+R1 	  6
+
+  INPUT 3		 OUTPUT 3
+R0 	100 		R0 	100
+R1 	  1
+
+  INPUT 4		 OUTPUT 4
+R0 	100 		R0 	  0
+R1 	110
 
 ;********* PROGRAMMA ***********
 
