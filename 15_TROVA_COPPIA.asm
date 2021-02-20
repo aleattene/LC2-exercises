@@ -1,3 +1,13 @@
+; ************ DESCRIZIONE SOTTOPROGRAMMA ************
+
+Il seguente sottoprogramma denominato GAP riceve nel registro R0 l’indirizzo della prima cella
+di un array di interi, cioè di una zona di memoria contenente una sequenza di numeri a 16 bit in complemento a
+due, non ordinati; la sequenza è terminata dal valore 0 (zero) che non fa parte dei valori considerati.
+Il sottoprogramma inoltre, restituisce nel registro R0 la differenza fra il valore massimo e il valore minimo dei
+numeri della sequenza (vengono trascurati eventuali problemi di overflow o underflow).
+Nonostante l'utilizzo di altri registri della CPU, il sottoprogramma restituisce 
+il controllo al programma chiamante senza che tali registri risultino alterati.
+
 ; ****** PROGRAMMA TEST	*********
 
 .orig		x3000
@@ -59,7 +69,7 @@ store5		.blkw	1		; riservo una cella memoria per contenuto R5
 
 stringaS
 ;		.stringz "ciao mamma"
-		.stringz "ciao pap�"
+		.stringz "ciao papà"
 
 car_m		.fill	#109		
 car_a		.fill	#97
