@@ -1,3 +1,16 @@
+; ************ DESCRIZIONE SOTTOPROGRAMMA ************
+
+Il seguente sottoprogramma denominato ANALIZZA_COPPIA riceve nei registri R0 e R1 due
+numeri a 16 bit in complemento a 2.
+Il sottoprogramma inoltre, restituisce:
+- nel registro R0 il valore 0 se i due numeri sono concordi, il valore 1 se sono discordi;
+- nel registro R1 il valore 0 se il valore assoluto del primo numero è maggiore o uguale al 
+	valore assoluto del secondo, il valore 1 in caso contrario;
+- nel registro R2 il valore 0 se la somma dei due numeri NON dà luogo a traboccamenti, 
+	il valore 1 in caso contrario.
+Nonostante l'utilizzo di altri registri della CPU, il sottoprogramma restituisce 
+il controllo al programma chiamante senza che tali registri risultino alterati.
+
 ; ****** PROGRAMMA TEST *************
 
 .orig		x3000
