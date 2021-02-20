@@ -1,3 +1,21 @@
+; ************ DESCRIZIONE SOTTOPROGRAMMA ************
+
+Il seguente sottoprogramma denominato ANNULLA_SPAZI riceve:
+- nel registro R0 l’indirizzo della prima cella di una zona di memoria contenente una stringa 
+	di caratteri codificati ASCII (un carattere per cella). 
+	La stringa è terminata dal valore 0 (corrispondente al carattere NUL);
+- nel registro R1 l’indirizzo della prima cella di una zona di memoria libera, di dimensioni 
+	sufficienti per contenere la stringa di caratteri di cui sopra.
+Il sottoprogramma inoltre:
+- trascrive la stringa dalla zona di memoria puntata da R0 a quella puntata da R1, facendo in modo che
+	non esistano spazi doppi o multipli fra le parole, né spazi iniziali o finali 
+	(cioè prima della prima parola o dopo l’ultima parola). 
+	La stringa trascritta deve essere terminata dal valore 0 (carattere NUL);
+- restituisce nel registro R2 il numero totale di spazi eliminati.
+Si ricorda che nel codice ASCII il carattere spazio ha codifica decimale 32 (esadecimale x20).
+Nonostante l'utilizzo di altri registri della CPU, il sottoprogramma restituisce 
+il controllo al programma chiamante senza che tali registri risultino alterati.
+
 ; ********* PROGRAMMA TEST *************
 
 .orig		x3000
@@ -37,7 +55,7 @@ ver_spazio	AND	R6,R6,R6	; verifico check spazio inziale
 		ADD	R4,R4,R2	; altrimenti confronto carattere - spazio
 		BRZ	el_spazio	; se trovo un altro spazio lo elimino
 
-		BRNP	scrivi		; altrimenti � uno spazio da lasciare...
+		BRNP	scrivi		; altrimenti è uno spazio da lasciare...
 
 el_spazio	ADD	R6,R6,#1	; incremento check spazio init (init stringaS)
 		ADD	R5,R5,#1	; incremento contatore spazi inutili
