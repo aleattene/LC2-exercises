@@ -10,6 +10,18 @@ compaia nella stringa, il sottoprogramma restituisce in R0 il valore zero.
 Nonostante l'utilizzo di altri registri della CPU, il sottoprogramma restituisce 
 il controllo al programma chiamante senza che tali registri risultino alterati.
 
+; ************ ESEMPI FUNZIONAMENTO SOTTOPROGRAMMA ************
+
+INPUT 1			 			OUTPUT 1
+R0 	indirizzo stringa “ciao mamma” 		R0	6 	la prima “ma” di “mamma” inizia al 6° carattere
+R1 		109 (car. “m”)
+R2 		 97 (car. “a”)
+
+INPUT 2			 			OUTPUT 2
+R0 	indirizzo stringa “ciao papà” 		R0 	0 	la stringa “ciao papà” non contiene la coppia “ma”
+R1 		109 (car. “m”)
+R2 		 97 (car. “a”)
+
 ; ****** PROGRAMMA TEST	*********
 
 .orig		x3000
