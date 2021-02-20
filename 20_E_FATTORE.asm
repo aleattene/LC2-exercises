@@ -77,4 +77,4 @@ int_pos_N	.fill #100
 ;int_pos_F	.fill #1
 int_pos_F	.fill #110
 
-.end
+.end					; fine programma
