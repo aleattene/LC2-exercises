@@ -20,7 +20,7 @@ R0 	-4 	R0 	  0
 
 ;******** PROGRAMMA ***********
 
-.ORIG		X3000
+.orig		X3000
 		LD	R0,intero	; metto in R0 il valore intero N
 		
 ;********** SOTTOPROGRAMMA ***********
@@ -68,7 +68,6 @@ Sn_out_0	AND	R0,R0,#0	; imposto il registro R0 a zero (come da specifiche)
 Sn_out_n	AND	R0,R0,#0	; azzero il registro R0
 		ADD	R0,R0,R4	; metto in R0 il valore di R4 (valore sequenza Sn ottenuta)
 		brnzp	fine		; e vado a fine sottoprogramma
-		
 
 fine		LD	R1,store1	; metto in R1 il valore contenuto nelle cella di indir. store1
 		LD	R2,store2	; metto in R2 il valore contenuto nelle cella di indir. store2
@@ -78,7 +77,6 @@ fine		LD	R1,store1	; metto in R1 il valore contenuto nelle cella di indir. store
 ; 		RET
 
 ;********** VARIABILI ***********
-
 
 intero		.fill	#9
 ;intero		.fill	#2
