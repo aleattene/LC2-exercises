@@ -64,7 +64,7 @@ fine		ADD	R0,R2,#0	; metto in R0 il valore di R2 (quoziente)
 		LD	R3,store3
 		LD	R4,store4
 	
-;		RET
+;		RET			; ritorno da sottoprogramma
 
 ;************** VARIABILI PROGRAMMA e SOTTOPROGRAMMA ***********
 
@@ -78,4 +78,4 @@ store2		.blkw	1		; riservo una cella memoria per registro R2
 store3		.blkw	1		; riservo una cella memoria per registro R3
 store4		.blkw	1		; riservo una cella memoria per registro R4
 
-.end
+.end					; fine programma
