@@ -27,7 +27,7 @@ R1 	110
 
 ;********* PROGRAMMA ***********
 
-.ORIG		x3000
+.orig		x3000
 		LD	R0, interoN	; metto in R0 il numero intero positivo N
 		LD	R1, interoD	; metto in R1 il numero intero positivo D
 	
@@ -78,4 +78,4 @@ store2		.blkw	1		; riservo una cella memoria per registro R2
 store3		.blkw	1		; riservo una cella memoria per registro R3
 store4		.blkw	1		; riservo una cella memoria per registro R4
 
-.END
+.end
