@@ -12,6 +12,16 @@ come sequenza di caratteri ASCII. Trascurare eventuali traboccamenti.
 Nonostante l'utilizzo di altri registri della CPU, il sottoprogramma restituisce 
 il controllo al programma chiamante senza che tali registri risultino alterati.
 
+; ************ ESEMPI FUNZIONAMENTO SOTTOPROGRAMMA ************
+
+INPUT 1				OUTPUT 1
+R0         5 			R0 	 57
+R1   “7”=x37
+
+INPUT 2				OUTPUT 2
+R0        57			R0 	572
+R1   “2”=x32
+
 ; *********** PROGRAMMA TEST *************
 
 .orig		x3000
