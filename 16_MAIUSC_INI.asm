@@ -16,6 +16,14 @@ Si ricorda che:
 Nonostante l'utilizzo di altri registri della CPU, il sottoprogramma restituisce 
 il controllo al programma chiamante senza che tali registri risultino alterati
 
+; ************ ESEMPIO FUNZIONAMENTO SOTTOPROGRAMMA ************
+
+INPUT
+R0 punta alla zona di memoria contenente la stringa “Oggi e’ il 7 luglio 2015”.
+
+OUTPUT
+La stringa in memoria è diventata “Oggi E’ Il 7 Luglio 2015”.
+
 ; *********** PROGRAMMA TEST **************
 
 .orig		x3000
