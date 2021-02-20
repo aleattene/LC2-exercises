@@ -1,3 +1,16 @@
+; ************ DESCRIZIONE SOTTOPROGRAMMA ************
+
+Il seguente sottoprogramma denominato COUNT_NUM riceve nel registro R0 l’indirizzo della prima
+cella di memoria contenente una stringa di testo costituita da caratteri codificati in codice 
+ASCII e terminata dal valore 0 (carattere NUL).
+Il sottoprogramma inoltre, restituisce nel registro R0 quanti numeri decimali 
+(cioè sequenze di cifre, eventualmente compresa la virgola di separazione tra parte intera e 
+parte frazionaria) sono presenti nella stringa di testo. 
+Si ricorda che le cifre decimali hanno codifiche ASCII comprese fra x30 e x39 in esadecimale, e che la virgola ha
+codifica ASCII x2C. Si assume che il testo NON contenga cifre all’interno di parole (es. b2c).
+Nonostante l'utilizzo di altri registri della CPU, il sottoprogramma restituisce 
+il controllo al programma chiamante senza che tali registri risultino alterati.
+
 ; ******* PROGRAMMA TEST *********
 
 .orig		x3000
@@ -43,7 +56,7 @@ ciclo_num	ADD	R0,R0,#1	; incremento cella (car/num) puntata da R0
 		ADD	R5,R1,R3	; confronto con caratt maggiori/uguali x39 (-57)
 		BRP 	no_num		; se risultato positivo -> no numero trovato
 		BRNZ	ciclo_num	; riciclo il "numero trovato" senza incrementare
-					; il contatore poich� "sequenza numerica unica"
+					; il contatore poichè "sequenza numerica unica"
 
 no_num		ADD	R0,R0,#1	; incremento cella (car/num) puntata da R0
 		BRNZP	ciclo_S		; continuo "scansione" stringaS fino termine (/0)
