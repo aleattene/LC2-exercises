@@ -1,3 +1,17 @@
+; ************ DESCRIZIONE SOTTOPROGRAMMA ************
+
+Il seguente sottoprogramma denominato ADD_DIGIT riceve:
+- nel registro R0 un numero N intero positivo codificato in complemento a due 
+	(quindi compreso fra 1 e 32767);
+- nel registro R1 il carattere ASCII corrispondente alla cifra decimale C 
+	(quindi un carattere la cui codifica esadecimale è compresa fra x30 e x39);
+Il sottoprogramma inoltre restituisce nel registro R0 il numero intero M = N x 10 + val(C) 
+(dove val(C) è il valore numerico decimale della cifra C) ovvero il risultato che si avrebbe 
+se la cifra C fosse stata immessa come ultima cifra di un numero decimale che si sta inserendo
+come sequenza di caratteri ASCII. Trascurare eventuali traboccamenti.
+Nonostante l'utilizzo di altri registri della CPU, il sottoprogramma restituisce 
+il controllo al programma chiamante senza che tali registri risultino alterati.
+
 ; *********** PROGRAMMA TEST *************
 
 .orig		x3000
