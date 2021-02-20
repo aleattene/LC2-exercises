@@ -12,6 +12,20 @@ Il sottoprogramma inoltre, sostituisce a ogni stringa dell’array l’OR (somma
 Nonostante l'utilizzo di altri registri della CPU, il sottoprogramma restituisce 
 il controllo al programma chiamante senza che tali registri risultino alterati.
 
+; ************ ESEMPIO FUNZIONAMENTO SOTTOPROGRAMMA ************
+
+				INPUT
+R0 		      x3408 		x3408 	0000 1111 0000 1111
+R1 	1111 0000 1111 0000 		x3409 	0011 0011 0011 0011
+					x340A 	1100 1100 1100 1100
+					x340B 	0000 0000 0000 0000
+				
+				OUTPUT
+R0 			   -		x3408 	1111 1111 1111 1111
+R1 			   -		x3409 	1111 0011 1111 0011
+					x340A 	1111 1100 1111 1100
+					x340B 	0000 0000 0000 0000
+
 ; ********* PROGRAMMA TEST *************
 
 .orig		x3000
