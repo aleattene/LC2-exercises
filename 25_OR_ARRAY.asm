@@ -1,3 +1,17 @@
+; ************ DESCRIZIONE SOTTOPROGRAMMA ************
+
+Il seguente sottoprogramma denominato OR_ARRAY riceve:
+- nel registro R0 l’indirizzo della prima cella di una zona di memoria contenente una sequenza 
+	di stringhe di 16 bit ciascuna; la stringa costituita da tutti zeri è il terminatore 
+	della sequenza e non viene considerata;
+- nel registro R1 una stringa di 16 bit.
+Il sottoprogramma inoltre, sostituisce a ogni stringa dell’array l’OR (somma logica) 
+	tra la stringa presente nell’array e la stringa ricevuta in R1. 
+	Si ricorda che per il teorema di De Morgan: 
+		not(a OR b) = not(a) AND not(b)
+Nonostante l'utilizzo di altri registri della CPU, il sottoprogramma restituisce 
+il controllo al programma chiamante senza che tali registri risultino alterati.
+
 ; ********* PROGRAMMA TEST *************
 
 .orig		x3000
