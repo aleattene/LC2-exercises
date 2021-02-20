@@ -68,7 +68,7 @@ fine
 		LD	R2, store2
 
 
-; 		RET
+; 		RET				; ritorno da sottoprogramma
 
 ; ****** VAR / COST *************
 
@@ -83,4 +83,4 @@ sec_num
 		.fill	#25000
 		.fill	#-20000
 
-.end
+.end						; fine programma
