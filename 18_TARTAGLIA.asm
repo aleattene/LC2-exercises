@@ -1,3 +1,18 @@
+; ************ DESCRIZIONE SOTTOPROGRAMMA ************
+
+Il seguente sottoprogramma denominato TARTAGLIA riceve:
+- nel registro R0 l’indirizzo della prima cella di un array A di N interi (cioè di una zona di memoria
+	simbolicamente indicata con il nome A contenente una sequenza di N numeri a 16 bit 
+	in complemento a due). La sequenza è terminata dal valore 0 (zero) che non fa parte dei valori 
+	considerati;
+- nel registro R1 l’indirizzo della prima cella di un array vuoto di nome T, cioè di una zona di memoria
+	libera, di lunghezza N+1.
+Il sottoprogramma inoltre, riempie l’array T utilizzando la regola che si adopera per la costruzione del triangolo di
+Tartaglia per il calcolo dei coefficienti binomiali, ovvero: T[1] = 1, T[N+1] = 1, T[I] = A[I-1]+A[I] per tutti i
+valori di I compresi tra 2 e N.
+Nonostante l'utilizzo di altri registri della CPU, il sottoprogramma restituisce 
+il controllo al programma chiamante senza che tali registri risultino alterati.
+
 ; ********* PROGRAMMA TEST *********
 
 .orig		x3000
