@@ -1,3 +1,12 @@
+; ************ DESCRIZIONE SOTTOPROGRAMMA ************
+
+Il seguente sottoprogramma denominato SEQ riceve nel registro R0 il numero intero N e 
+restituisce sempre in R0 l’ennesimo termine S(N) della sequenza definita nel seguente modo:
+				S(N) = S(N-1) – 2 x S(N-2)
+con S1 = 1 e S2 = 1. Si ipotizza inoltre che S(N) = 0 per N ≤ 0
+Nonostante l'utilizzo di altri registri della CPU, il sottoprogramma restituisce 
+il controllo al programma chiamante senza che tali registri risultino alterati.
+
 ;******** PROGRAMMA ***********
 
 .ORIG		X3000
@@ -16,7 +25,7 @@
 
 ;qui numero positivo maggiore di zero
 		
-		ADD 	R0,R0,#-2	; verifico se il valore di R0 � 1 (BRn) oppure 2 (BRz)
+		ADD 	R0,R0,#-2	; verifico se il valore di R0 è 1 (BRn) oppure 2 (BRz)
 		BRnz	S12_out1	; se trovo un negativo o nullo vado ad output_1
 
 ; qui numero maggiore di 2
@@ -34,8 +43,8 @@ ciclo		ADD	R3,R1,R1	; calcolo 2(Sn-2)
 		BRZ	Sn_out_n	; se trovo valore nullo, sequenza finita, vado emettere output Sn	
 		ADD	R1,R2,#0	; altrimenti S(n-1) diventa S(n-2)
 		ADD	R2,R4,#0	; Sn diventa S(n-1)
-		BRNZP	ciclo		; e si ripete il ciclo sin quando R0 non � uguale a zero
-					; ovvero � terminata la sequenza da calcolare
+		BRNZP	ciclo		; e si ripete il ciclo sin quando R0 non è uguale a zero
+					; ovvero è terminata la sequenza da calcolare
 			
 S12_out1	AND	R0,R0,#0	; azzero il registro R0
 		ADD	R0,R0,#1	; imposto il registri R0 ad 1 (come da specifiche)
