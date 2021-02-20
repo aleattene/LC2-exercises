@@ -74,7 +74,7 @@ fine		LD	R1,store1	; metto in R1 il valore contenuto nelle cella di indir. store
 		LD	R3,store3	; metto in R3 il valore contenuto nelle cella di indir. store3
 		LD	R4,store4	; metto in R4 il valore contenuto nelle cella di indir. store4
 
-; 		RET
+; 		RET			; ritorno da sottoprogramma
 
 ;********** VARIABILI ***********
 
@@ -87,4 +87,4 @@ store2		.blkw	1
 store3		.blkw	1
 store4		.blkw	1
 
-.end
+.end					; fine programma
