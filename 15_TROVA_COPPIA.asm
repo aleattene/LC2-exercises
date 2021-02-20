@@ -1,10 +1,12 @@
 ; ************ DESCRIZIONE SOTTOPROGRAMMA ************
 
-Il seguente sottoprogramma denominato GAP riceve nel registro R0 l’indirizzo della prima cella
-di un array di interi, cioè di una zona di memoria contenente una sequenza di numeri a 16 bit in complemento a
-due, non ordinati; la sequenza è terminata dal valore 0 (zero) che non fa parte dei valori considerati.
-Il sottoprogramma inoltre, restituisce nel registro R0 la differenza fra il valore massimo e il valore minimo dei
-numeri della sequenza (vengono trascurati eventuali problemi di overflow o underflow).
+Il seguente sottoprogramma denominato TROVA_COPPIA riceve:
+- nel registro R0 l’indirizzo della prima cella di una zona di memoria contenente una stringa di caratteri
+	codificati ASCII (un carattere per cella). La stringa è terminata dal valore 0;
+- nei registri R1 e R2 una coppia di caratteri codificati ASCII.
+Il sottoprogramma inoltre, restituisce nel registro R0 un numero intero che indica da quale carattere della stringa
+inizia la prima occorrenza della coppia di caratteri ricevuti in R1 e R2. Qualora la coppia di caratteri non
+compaia nella stringa, il sottoprogramma restituisce in R0 il valore zero.
 Nonostante l'utilizzo di altri registri della CPU, il sottoprogramma restituisce 
 il controllo al programma chiamante senza che tali registri risultino alterati.
 
