@@ -6,10 +6,19 @@ ASCII e terminata dal valore 0 (carattere NUL).
 Il sottoprogramma inoltre, restituisce nel registro R0 quanti numeri decimali 
 (cioè sequenze di cifre, eventualmente compresa la virgola di separazione tra parte intera e 
 parte frazionaria) sono presenti nella stringa di testo. 
-Si ricorda che le cifre decimali hanno codifiche ASCII comprese fra x30 e x39 in esadecimale, e che la virgola ha
-codifica ASCII x2C. Si assume che il testo NON contenga cifre all’interno di parole (es. b2c).
+Si ricorda che le cifre decimali hanno codifiche ASCII comprese fra x30 e x39 in esadecimale, 
+e che la virgola ha codifica ASCII x2C. 
+Si assume che il testo NON contenga cifre all’interno di parole (es. b2c).
 Nonostante l'utilizzo di altri registri della CPU, il sottoprogramma restituisce 
 il controllo al programma chiamante senza che tali registri risultino alterati.
+
+; ************ ESEMPIO FUNZIONAMENTO SOTTOPROGRAMMA ************
+
+INPUT
+R0 punta alla zona di memoria contenente la stringa “Buon Natale 25 Dicembre 2015”
+
+OUTPUT
+R0 contiene il valore 2
 
 ; ******* PROGRAMMA TEST *********
 
