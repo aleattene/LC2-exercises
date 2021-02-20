@@ -1,3 +1,13 @@
+; ************ DESCRIZIONE SOTTOPROGRAMMA ************
+
+Il seguente sottoprogramma denominato SEQMOD riceve nel registro R0 il numero intero N e 
+restituisce sempre in R0 l’ennesimo termine S(N) della sequenza definita nel seguente modo:
+			S(N) = |S(N-1)| – 2 x S(N-2)
+con S1 = 1 e S2 = 1 e dove la notazione |SN-1| indica il valore assoluto del numero S(N-1).
+Si ipotizza inoltre che S(N) = 0 per N ≤ 0
+Nonostante l'utilizzo di altri registri della CPU, il sottoprogramma restituisce 
+il controllo al programma chiamante senza che tali registri risultino alterati.
+
 ; ********* PROGRAMMA TEST ************
 
 .orig		x3000
