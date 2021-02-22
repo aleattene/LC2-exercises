@@ -1,3 +1,13 @@
+; ************ DESCRIZIONE SOTTOPROGRAMMA ************
+
+Il seguente sottoprogramma denominato SEQVALASS riceve nel registri R0 il numero intero N 
+e restituisce sempre in R0 l’ennesimo termine S(N) della sequenza definita nel seguente modo:
+			S(N) = S(N-1) – 2 x | S(N-2) |
+con S1 = 1 e S2 = 1, dove la notazione | S(N-2) | significa valore assoluto di S(N-2).
+Si ipotizza inoltre che S(N = 0) per N ≤ 0
+Nonostante l'utilizzo di altri registri della CPU, il sottoprogramma restituisce 
+il controllo al programma chiamante senza che tali registri risultino alterati.
+
 ; ********* PROGRAMMA TEST ********
 
 .orig		x3000
@@ -18,7 +28,7 @@
 		BRNZ	output_0	; se N minore/uguale 0 -> Sn = 0 (output)
 
 ; qui positivo
-		ADD	R0,R0,-2	; se risultato � negativo N = 1 mentre
+		ADD	R0,R0,-2	; se risultato è negativo N = 1 mentre
 		BRNZ	output_1	; se nullo N = 2 -> Sn = 1 (output)
 					; altrimento N maggiore di 2
 
@@ -26,7 +36,7 @@
 		ADD	R1,R1,#1	; in R1 <- S2 -> futuro Sn-1
 		ADD	R2,R2,#1	; in R2 <- S1 -> futuro Sn-2
 
-ciclo		AND	R2,R2,R2	; verifico se Sn-2 � negativo o meno
+ciclo		AND	R2,R2,R2	; verifico se Sn-2 è negativo o meno
 		BRN	val_ass		; se negativo -> valore assoluto
 					; altrimenti calcolo la sequenza Sn
 
