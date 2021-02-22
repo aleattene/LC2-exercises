@@ -1,3 +1,17 @@
+; ************ DESCRIZIONE SOTTOPROGRAMMA ************
+
+Il seguente sottoprogramma denominato TROVARRAY riceve nei registri R0 e R1 gli indirizzi delle
+prime celle di memoria contenenti due array A e B di numeri interi in complemento a due.
+I due array A e B sono ordinati per valori crescenti, non contengono mai più di una volta uno stesso numero e
+sono terminati dal valore 0 che NON viene considerato un numero degli array.
+Il sottoprogramma inoltre, verifica se la sequenza di numeri che compongono l’array B è presente identica anche
+nell’array A oppure no. 
+Se la risposta è affermativa, il sottoprogramma restituisce nel registro R0 l’indice dell’elemento di A 
+da cui inizia la sequenza trovata (dove il primo elemento ha indice 1, il secondo 2 e così via)
+altrimenti restituisce nel registro R0 il valore zero.
+Nonostante l'utilizzo di altri registri della CPU, il sottoprogramma restituisce 
+il controllo al programma chiamante senza che tali registri risultino alterati.
+
 ;********* PROGRAMMA TEST ********
 
 .orig		x3000
@@ -29,7 +43,7 @@ ciclo		LDR	R3,R1,#0	; in R3 <- valore puntato da R1 (arrayB)
 		ADD	R3,R3,#1	; Ca2 di R3 -> -R3 (per sottrazione/confronto)
 		ADD	R3,R2,R3	; confronto (sottraggo) i due elementi
 		BRN	primo_min	; se risultato negativo -> primo < secondo
-		BRP	no_seq		; se positivo -> no seq perch� primo > secondo
+		BRP	no_seq		; se positivo -> no seq perchè primo > secondo
 					; altrimenti sono uguali....
 		
 		ADD	R5,R5,#1	; check seq inizio arrayB trovata in arrayA
@@ -92,5 +106,3 @@ arrayB
 		.fill	#0
 
 .end					; fine programma
-
-
