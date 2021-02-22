@@ -1,4 +1,4 @@
-  ; ************ DESCRIZIONE SOTTOPROGRAMMA ************
+; ************ DESCRIZIONE SOTTOPROGRAMMA ************
 
 Il seguente sottoprogramma denominato CERCA_POS riceve:
 - nel registro R0 l’indirizzo della prima cella di una zona di memoria contenente in ciascuna cella un numero
@@ -60,13 +60,11 @@ fine		ADD	R0,R3,#0	; contenuto R3 in R0 (come da specifica)
 
 ;		RET			; ritorno da sottoprogramma
 
-
 ;********** VARIABILI SOTTORPOGRAMMA e PROGRAMMA **********
 
 store2		.blkw 1			; riservo cella memoria per contenuto R2
 store3		.blkw 1			; riservo cella memoria per contenuto R3
 store4		.blkw 1			; riservo cella memoria per contenuto R4
-
 
 arrayM		.fill	#-56
 		.fill	#15
