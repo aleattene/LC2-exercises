@@ -12,6 +12,21 @@ successive partono da tale valore.
 Nonostante l'utilizzo di altri registri della CPU, il sottoprogramma restituisce 
 il controllo al programma chiamante senza che tali registri risultino alterati.
 
+; ************ ESEMPIO FUNZIONAMENTO SOTTOPROGRAMMA ************
+
+Input (N=4) Output
+R0	x3408	    x3408     -10     A			R0	-	x3408	  -10	  A
+R1	x3420	    x3409     500			R1      -	x3409	  500
+		    x340A   32766					x340A   32766
+		    x340B     -12					x340B	  -12
+		    x340C      15					x340C      15
+		    x340D 	0					x340D	    0
+		    x3420	-      R				x3420	  -10     R
+		    x3421       -					x3421	  490
+		    x3422	-					x3422	    0
+		    x3423       -					x3423	  -12
+		    x3424       -					x3424       3
+
 ;********** PROGRAMMA TEST **********
 
 .orig		x3000
