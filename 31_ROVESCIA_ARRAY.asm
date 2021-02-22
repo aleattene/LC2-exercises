@@ -12,11 +12,24 @@ il primo elemento di R diventa l’ultimo elemento di A, il secondo elemento di 
 Nonostante l'utilizzo di altri registri della CPU, il sottoprogramma restituisce 
 il controllo al programma chiamante senza che tali registri risultino alterati.
 
+; ************ ESEMPIO FUNZIONAMENTO SOTTOPROGRAMMA ************
+
+	   INPUT (N=4)			 		 OUTPUT
+R0     x3408 	   x3408     1     A 		R0 	-	x3408      1     A
+R1     x340D 	   x3409     3 			R1      -	x3409 	   3
+		   x340A    -5 					x340A 	  -5
+		   x340B    12 					x340B 	  12
+		   x340C     0 					x340C 	   0
+		   x340D     -     R 				x340D 	  12     R
+		   x340E     -					x340E 	  -5
+		   x340F     -					x340F      3
+		   x3410     -					x3410      1
+
 ; ********** PROGRAMMA ***********
+
 .orig		x3000
 		LEA	R0, arrayA	; metto IN R0 l'indirizzo di arrayA
 		LEA	R1, arrayR	; metto in R1 l'indirizzo di arrayR	
-
 
 ; ******** SOTTOPROGRAMMA *******
 	
@@ -50,7 +63,6 @@ fine		LD	R2, store2	; metto in R2 il contenuto della cella di indirizzo store2
 		LD	R3, store3	; metto in R3 il contenuto della cella di indirizzo store3
 
 ;		RET			; ritorno da sottoprogramma
-
 
 ; ******** VARIABILI PROGRAMMA e SOTTOPROGRAMMA *******
 
