@@ -1,3 +1,21 @@
+; ************ DESCRIZIONE SOTTOPROGRAMMA ************
+
+Il seguente sottoprogramma denominato CONTA_MINU_MAIU riceve:
+- nel registro R0 l’indirizzo della prima cella di una zona di memoria contenente una stringa di caratteri
+	codificati ASCII (un carattere per cella). La stringa è terminata dal valore 0;
+- nel registro R1 il codice ASCII di una lettera minuscola (le lettere minuscole hanno codifiche da “a”=x61
+	a “z”=x7A, in decimale da “a”=97 a “z”=122).
+Il sottoprogramma restituisce:
+- nel registro R0 il conteggio del numero di volte in cui la lettera ricevuta in ingresso compare nella stringa,
+	come lettera minuscola;
+- nel registro R1 il conteggio del numero di volte in cui la lettera ricevuta in ingresso compare nella stringa,
+	come lettera MAIUSCOLA.
+Si ricorda che la differenza numerica fra la codifica ASCII di una lettera minuscola e quella della corrispondente
+lettera MAIUSCOLA espressa in notazione decimale è pari a 32 (quindi per convertire una lettera minuscola nella
+corrispondente MAIUSCOLA basta sottrarre 32 al codice della lettera minuscola).
+Nonostante l'utilizzo di altri registri della CPU, il sottoprogramma restituisce 
+il controllo al programma chiamante senza che tali registri risultino alterati.
+
 ; ****** PROGRAMMA TEST *************
 
 .orig		x3000
