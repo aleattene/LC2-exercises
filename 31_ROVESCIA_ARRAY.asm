@@ -33,7 +33,7 @@ R1     x340D 	   x3409     3 			R1      -	x3409 	   3
 
 ; ******** SOTTOPROGRAMMA *******
 	
-; ROVESCIA_ARRAY		; nome sottoprogramma
+; ROVESCIA_ARRAY			; nome sottoprogramma
 
 ; salvataggio registri
 	
@@ -43,14 +43,14 @@ R1     x340D 	   x3409     3 			R1      -	x3409 	   3
 		NOT	R0,R0
 		ADD	R0,R0,#1	; Ca2 per sottrazione tra due indirizzi array A e R
 		ADD	R4,R0,R1	; conto valori presenti in arrayA (zero compreso)
-				; dalla differenza indirrizzo arrayR e arrayA
+					; dalla differenza indirrizzo arrayR e arrayA
 		ADD	R4,R4,-2	; valore = numero elementi da sommare a ind inziale arrayR
 		NOT	R0,R0
 		ADD	R0,R0,#1	; ripristino indirizzo corretto arrayA contenuto in R0
 
 ciclo		LDR	R2,R0,#0	; metto in R2 il primo valore di arrayA (indirizzo contenuto in R0)
 		BRZ	fine		; se rilevo uno zo zero vado a fine sottorpogramma
-				; altrimenti
+					; altrimenti
 		ADD	R0,R0,#1	; incremento di 1 l'indirizzo di ARRAY A
 		ADD	R3,R1,R4	; metto in R3 il valore di indirizzo finale di arrayR
 		STR	R2,R3,#0	; scrivo il contenuto di R2 (valore di arrayA) nellla cella di indirizzo R3 (indirizzo arrayR)
@@ -72,9 +72,9 @@ arrayA		.fill	#1
 		.fill	#12
 		.fill	#0	
 
-arrayR	.blkw	4
+arrayR		.blkw	4
 
-store2	.blkw	1		; riservo una cella memoria per contenuto R2
-store3	.blkw	1		; riservo una cella memoria per contenuto R3
+store2		.blkw	1		; riservo una cella memoria per contenuto R2
+store3		.blkw	1		; riservo una cella memoria per contenuto R3
 		
-.end				; fine programma
+.end					; fine programma
