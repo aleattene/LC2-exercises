@@ -1,13 +1,11 @@
 ; ************ DESCRIZIONE SOTTOPROGRAMMA ************
 
-Il seguente sottoprogramma denominato OVER_UNDER riceve nei registri R0 e R1 
-due numeri a 16 bit in complemento a due ed effettua la somma R0 + R1, 
-restituendola nel registro R0 al programma chiamante, indicando se:
+Il seguente sottoprogramma denominato OVER_UNDER riceve nei registri R0 e R1 due numeri a 16 bit
+in complemento a due ed effettua la somma R0 + R1 restituendola nel registro R0 al programma chiamante,
+indicando se:
 - il risultato è corretto (R1 = 0)
 - si è verificato overflow (R1 = 1)
 - si è verificato underflow (R1 = -1).
-Nonostante l'utilizzo di altri registri della CPU, il sottoprogramma restituisce 
-il controllo al programma chiamante senza che tali registri risultino alterati.
 
 ; ************* PROGRAMMA TEST ***********
 
@@ -56,7 +54,7 @@ overflow	AND	R1,R1,#0	; resetto il registro R1
 
 fine		brnzp	fine
 		
-		; RET 
+; 		RET 			
 				
 ;*********** VARIABILI PROGRAMMA ****************
 
@@ -67,5 +65,5 @@ num2	.fill	#1
 ;num2	.fill	#-1
 ;num2	.fill	#0
 
-.end
+.end					
 	
