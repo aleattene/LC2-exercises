@@ -1,3 +1,17 @@
+; ************ DESCRIZIONE SOTTOPROGRAMMA ************+
+
+Il seguente sottoprogramma denominato CONTACIFRE riceve:
+- nel registro R0 l’indirizzo della prima cella di una zona di memoria contenente una stringa S di caratteri
+ASCII (terminata da 0, ovvero il carattere NUL);
+- nel registro R1 l’indirizzo della prima di un gruppo di 10 celle libere che costituiscono l’array C.
+Il sottoprogramma inoltre, inserisce nel primo elemento di C quante volte il carattere ASCII corrispondente alla cifra
+decimale 0 compare nella stringa S, nel secondo elemento di C quante volte compare il carattere 1 nella stringa
+S, e così via fino al carattere 9. 
+Si ricorda che le 10 cifre decimali hanno codifiche ASCII da x30 (in decimale 48) per lo 0 
+a x39 (in decimale 57) per il 9.
+Nonostante l'utilizzo di altri registri della CPU, il sottoprogramma restituisce 
+il controllo al programma chiamante senza che tali registri risultino alterati.
+
 ;************* PROGRAMMA TEST **************
 .orig		x3000  
       		LEA	R0, stringaS	; acquisisco in R0 indirizzo prima cella Stringa (primo carattere) 
@@ -23,7 +37,7 @@
 ciclo_S  	LDR     R4,R0,#0	; acquisisco in R4 il contenuuo della cella avente
 					; indirizzo contenuto in R0 (ovvero acquisisco il codice 
 					; ASCII del carattere della Stringa S)
-                BRz     cifra_succ	; se trovo il NUL (zero) la stringa � terminata quindi passo
+                BRz     cifra_succ	; se trovo il NUL (zero) la stringa è terminata quindi passo
 					; alla scrittura nell'arrayC del conteggio cifre ed alla
 					; verifica della cifra decimale successiva
 					; altrimenti....
@@ -81,7 +95,7 @@ cifra_1         .fill #48		; codifica ASCII della cifra 0
                 .fill #57		; codifica ASCII della cifra 9
                 .fill #0		; cidifica ASCII del carattere NUL (terminatore)
 
-;stringaS       .stringz "Oggi � il 13 settembre 2016, che si pu� scrivere anche 13/09/2016"
+;stringaS       .stringz "Oggi è il 13 settembre 2016, che si può scrivere anche 13/09/2016"
 ;stringaS	.stringz "La festa della mamma cade sempre in una domenica di maggio"
 stringaS	.stringz "Ecco una strana sequenza di cifre: 0 11 222 33 4 55 666 7777 88888 999999"	
                    
