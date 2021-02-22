@@ -8,6 +8,17 @@ Si ipotizza inoltre che S(N = 0) per N ≤ 0
 Nonostante l'utilizzo di altri registri della CPU, il sottoprogramma restituisce 
 il controllo al programma chiamante senza che tali registri risultino alterati.
 
+; ************ ESEMPI FUNZIONAMENTO SOTTOPROGRAMMA ************
+
+  INPUT 1	          OUTPUT 1
+R0	 9		R0	-85
+
+  INPUT 2	          OUTPUT 2
+R0	 2		R0	  1
+
+  INPUT 3	          OUTPUT 3
+R0	-4		R0	  0
+
 ; ********* PROGRAMMA TEST ********
 
 .orig		x3000
