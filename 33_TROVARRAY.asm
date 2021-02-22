@@ -12,6 +12,28 @@ altrimenti restituisce nel registro R0 il valore zero.
 Nonostante l'utilizzo di altri registri della CPU, il sottoprogramma restituisce 
 il controllo al programma chiamante senza che tali registri risultino alterati.
 
+; ************ ESEMPI FUNZIONAMENTO SOTTOPROGRAMMA ************
+
+	INPUT 1 		OUTPUT 1 			MOTIVO 1
+A = -9, -5, 2, 6, 12, 0 	 R0 = 3 	Trovato B a partire dall’elemento di posto 3 di A
+B = 2, 6, 0
+
+	INPUT 2 		OUTPUT 2 			MOTIVO 2
+A = -9, -5, 3, 6, 12, 0 	 R0 = 0 	In A non c’è la sequenza -5, 6 (c’è il 3 in mezzo)
+B = -5, 6, 0
+
+	INPUT 3 		OUTPUT 3 			MOTIVO 3
+A = -9, -5, 3, 6, 12, 0 	 R0 = 0 	In B c’è un numero (15) non presente in A
+B = 3, 6, 12, 15, 0
+
+	INPUT 4 		OUTPUT 4 			MOTIVO 4
+A = 3, 6, 12, 15, 18, 20, 0 	 R0 = 0 	Tutti i numeri di B vengono prima di quelli di A
+B = -9, -5, 0
+
+	INPUT 5 		OUTPUT 5 			MOTIVO 5
+A = -9, -5, 3, 6, 12, 0 	 R0 = 0 	Tutti i numeri di B vengono dopo quelli di A
+B = 15, 18, 21, 0
+
 ;********* PROGRAMMA TEST ********
 
 .orig		x3000
