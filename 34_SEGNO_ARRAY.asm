@@ -1,3 +1,18 @@
+; ************ DESCRIZIONE SOTTOPROGRAMMA ************
+
+Il seguente sottoprogramma denominato SEGNO_ARRAY riceve:
+- nel registro R0 l’indirizzo della prima cella di un array A di N interi (cioè di una zona di memoria 
+	simbolicamente indicata con il nome A contenente una sequenza di N numeri a 16 bit in complemento a due).
+	La sequenza è terminata dal valore 0 (zero) che non fa parte dei valori considerati;
+- nel registro R1 l’indirizzo della prima cella di un array vuoto di nome R, 
+	cioè di una zona di memoria libera, di lunghezza N.
+Il sottoprogramma inoltre, inserisce in ogni elemento R[i] l’indicazione del segno del corrispondente elemento A[i]:
+- se A[i] < 0 allora R[i] = –1
+- se A[i] > 0 allora R[i] = 1
+- se A[i] = MAXN massimo numero negativo allora R[i] = 0 (si ricorda che | MAXN | = MAXP + 1).
+Nonostante l'utilizzo di altri registri della CPU, il sottoprogramma restituisce 
+il controllo al programma chiamante senza che tali registri risultino alterati.
+
 ; ******** PROGRAMMA TEST **********
 
 .orig		x3000
