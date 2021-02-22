@@ -1,3 +1,16 @@
+; ************ DESCRIZIONE SOTTOPROGRAMMA ************
+
+Il seguente sottoprogramma denominato ROVESCIA_ARRAY riceve:
+- nel registro R0 l’indirizzo della prima cella di un array A di N interi (cioè di una zona di memoria
+	simbolicamente indicata con il nome A contenente una sequenza di N numeri a 16 bit 
+	in complemento a due). 
+	La sequenza è terminata dal valore 0 (zero) che non fa parte dei valori considerati;
+- nel registro R1 l’indirizzo della prima cella di un array vuoto di nome R, 
+	cioè di una zona di memoria libera, di lunghezza N.
+Il sottoprogramma inoltre, riempie l’array R rovesciando l’ordine degli elementi di A: in altre parole,
+il primo elemento di R diventa l’ultimo elemento di A, il secondo elemento di R il penultimo di A, e così via.
+Nonostante l'utilizzo di altri registri della CPU, il sottoprogramma restituisce 
+il controllo al programma chiamante senza che tali registri risultino alterati.
 
 ; ********** PROGRAMMA ***********
 .orig		x3000
