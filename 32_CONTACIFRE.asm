@@ -12,7 +12,25 @@ a x39 (in decimale 57) per il 9.
 Nonostante l'utilizzo di altri registri della CPU, il sottoprogramma restituisce 
 il controllo al programma chiamante senza che tali registri risultino alterati.
 
+; ************ ESEMPI FUNZIONAMENTO SOTTOPROGRAMMA ************
+
+INPUT 1 
+S = “Oggi è il 13 settembre 2016, che si può scrivere anche 13/09/2016”
+OUTPUT 1 
+C = 3, 4, 2, 2, 0, 0, 2, 0, 0, 1
+
+INPUT 2 
+“La festa della mamma cade sempre in una domenica di maggio”
+OUTPUT 2
+C = 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
+
+INPUT 3
+S = “Ecco una strana sequenza di cifre: 0 11 222 33 4 55 666 7777 88888 999999”
+OUTPUT 3
+C = 1, 2, 3, 2, 1, 2, 3, 4, 5, 6
+
 ;************* PROGRAMMA TEST **************
+
 .orig		x3000  
       		LEA	R0, stringaS	; acquisisco in R0 indirizzo prima cella Stringa (primo carattere) 
 					; della stringa S
@@ -71,7 +89,7 @@ fine           	LD	R2, store2	; scrivo in R2 contenuto cella indirizzo store2
 		LD	R5, store5	; scrivo in R5 contenuto cella indirizzo store5
 		LD	R6, store6	; scrivo in R6 contenuto cella indirizzo store6
                 
-;               RET				; ritorno da sottoprogramma
+;               RET			; ritorno da sottoprogramma
 
 ;********** VARIABILI PROGRAMMA e SOTTOPROGRAMMA ************
 
@@ -99,4 +117,4 @@ cifra_1         .fill #48		; codifica ASCII della cifra 0
 ;stringaS	.stringz "La festa della mamma cade sempre in una domenica di maggio"
 stringaS	.stringz "Ecco una strana sequenza di cifre: 0 11 222 33 4 55 666 7777 88888 999999"	
                    
-.end						; fine programma
+.end					; fine programma
