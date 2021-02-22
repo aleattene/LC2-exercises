@@ -10,6 +10,16 @@ Se il numero cercato non esiste nella sequenza, il sottoprogramma restituisce il
 Nonostante l'utilizzo di altri registri della CPU, il sottoprogramma restituisce 
 il controllo al programma chiamante senza che tali registri risultino alterati.
 
+; ************ ESEMPIO FUNZIONAMENTO SOTTOPROGRAMMA ************
+
+           INPUT 			         OUTPUT
+R0    x3408	x3408   -56 		R0     3 	x3408    -56
+R1 	 -9 	x3409 	 15 				x3409 	  15
+		x340A 	 -9 				x340A 	  -9
+		x340B 	 12 				x340B 	  12
+		x340C  	 27 				x340C 	  27
+		x340D 	  0 				x340D 	   0
+
 ; ********** PROGRAMMA TEST **********
 
 .orig		x3000
