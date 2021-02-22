@@ -54,7 +54,7 @@ overflow	AND	R1,R1,#0	; resetto il registro R1
 
 fine		brnzp	fine
 		
-; 		RET 			
+; 		RET 			; ritorno da sottoprogramma
 				
 ;*********** VARIABILI PROGRAMMA ****************
 
@@ -65,5 +65,4 @@ num2	.fill	#1
 ;num2	.fill	#-1
 ;num2	.fill	#0
 
-.end					
-	
+.end					; fine programma
