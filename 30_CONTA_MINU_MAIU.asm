@@ -16,6 +16,15 @@ corrispondente MAIUSCOLA basta sottrarre 32 al codice della lettera minuscola).
 Nonostante l'utilizzo di altri registri della CPU, il sottoprogramma restituisce 
 il controllo al programma chiamante senza che tali registri risultino alterati.
 
+; ************ ESEMPIO FUNZIONAMENTO SOTTOPROGRAMMA ************
+
+INPUT
+R0 punta alla zona di memoria contenente la stringa “BUON MARTEDI 17 gennaio 2017”, 
+R1 contiene la lettera “n”
+
+OUTPUT
+R0 contiene il valore 2, R1 contiene il valore 1
+
 ; ****** PROGRAMMA TEST *************
 
 .orig		x3000
