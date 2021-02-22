@@ -13,6 +13,19 @@ Il sottoprogramma inoltre, inserisce in ogni elemento R[i] l’indicazione del s
 Nonostante l'utilizzo di altri registri della CPU, il sottoprogramma restituisce 
 il controllo al programma chiamante senza che tali registri risultino alterati.
 
+; ************ ESEMPIO FUNZIONAMENTO SOTTOPROGRAMMA ************
+
+	   INPUT (N=4) 						  OUTPUT
+R0	X3408 	    x3408	  1	 A		R0	-	x3408	    1	  A
+R1	X3420	    x3409    -32768			R1	-	x3409  -32768
+		    x340A	 -5					x340A      -5
+		    x340B	 12 					x340B      12
+		    x340C	  0					x340C	    0
+		    x3420	  -	 R				x3420	    1	   R
+		    x3421         -					x3421       0
+		    x3422         -					x3422	   –1
+		    x3423         -					x3423	    1
+
 ; ******** PROGRAMMA TEST **********
 
 .orig		x3000
